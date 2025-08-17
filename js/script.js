@@ -229,7 +229,7 @@ $("#contactForm").addEventListener("submit", async (e) => {
   };
   console.log("Contact submit → /api/contact", payload);
   try {
-    const r = await fetch("/api/contact", {
+    const r = await fetch("https://formspree.io/f/xjkodyry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -237,113 +237,6 @@ $("#contactForm").addEventListener("submit", async (e) => {
     alert(r.ok ? "Thanks! I will get back to you." : "Failed to send.");
   } catch (err) {
     alert("Failed to send.");
-  }
-});
-
-// ==== Uploader Drawer ====
-const drawer = $("#uploader");
-const openBtn = $("#openUploader");
-const closeBtn = $("#closeUploader");
-function openDrawer() {
-  drawer.classList.add("open");
-  drawer.setAttribute("aria-hidden", "false");
-}
-function closeDrawer() {
-  drawer.classList.remove("open");
-  drawer.setAttribute("aria-hidden", "true");
-}
-openBtn.addEventListener("click", openDrawer);
-closeBtn.addEventListener("click", closeDrawer);
-
-// Dropzone
-const dz = $("#dropzone");
-const fileInput = $("#thumb");
-const preview = $("#preview");
-dz.addEventListener("click", () => fileInput.click());
-dz.addEventListener("dragover", (e) => {
-  e.preventDefault();
-  dz.style.borderColor = "var(--accent)";
-});
-dz.addEventListener(
-  "dragleave",
-  () => (dz.style.borderColor = "rgba(255,255,255,.25)")
-);
-dz.addEventListener("drop", (e) => {
-  e.preventDefault();
-  fileInput.files = e.dataTransfer.files;
-  dz.style.borderColor = "rgba(255,255,255,.25)";
-  showPreview();
-});
-fileInput.addEventListener("change", showPreview);
-function showPreview() {
-  const f = fileInput.files && fileInput.files[0];
-  if (!f) {
-    preview.innerHTML = "";
-    return;
-  }
-  const url = URL.createObjectURL(f);
-  preview.innerHTML = `<img src="${url}" alt="Preview" style="max-width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.12)"/>`;
-}
-
-// Save Draft (local only)
-$("#saveDraft").addEventListener("click", () => {
-  const draft = collectForm();
-  localStorage.setItem("draftProject", JSON.stringify(draft));
-  alert("Draft saved locally.");
-});
-(function loadDraft() {
-  const d = localStorage.getItem("draftProject");
-  if (!d) return;
-  try {
-    const j = JSON.parse(d);
-    $("#title").value = j.title || "";
-    $("#desc").value = j.description || "";
-    $("#url").value = j.url || "";
-    $("#repo").value = j.repo || "";
-    $("#tags").value = (j.tags || []).join(", ");
-  } catch {}
-})();
-
-function collectForm() {
-  const tags = $("#tags")
-    .value.split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-  return {
-    title: $("#title").value,
-    description: $("#desc").value,
-    url: $("#url").value,
-    repo: $("#repo").value,
-    tags,
-  };
-}
-
-// Submit to backend (multipart/form-data)
-$("#uploadForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const meta = collectForm();
-  const fd = new FormData();
-  Object.entries(meta).forEach(([k, v]) => {
-    if (Array.isArray(v)) fd.append(k, JSON.stringify(v));
-    else fd.append(k, v || "");
-  });
-  if (fileInput.files[0]) fd.append("thumbnail", fileInput.files[0]);
-
-  try {
-    const r = await fetch("/api/projects", {
-      method: "POST",
-      headers: state.token
-        ? { Authorization: "Bearer " + state.token }
-        : undefined,
-      body: fd,
-    });
-    if (!r.ok) throw new Error("Upload failed");
-    alert("Published!");
-    closeDrawer();
-    loadProjects();
-  } catch (err) {
-    console.error(err);
-    alert("Upload failed. Check console and backend.");
   }
 });
 
@@ -362,7 +255,6 @@ const handleFetch = async () => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
     allSkills.innerHTML = "";
     data.forEach((item) => {
       const span = document.createElement("span");
