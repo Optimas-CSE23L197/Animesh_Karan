@@ -10,25 +10,6 @@ const state = {
 // Year
 $("#year").textContent = new Date().getFullYear();
 
-// Theme Toggle (dark always looks best; here we just add a subtle variant)
-const toggleBtn = $("#themeToggle");
-let alt = false;
-toggleBtn.addEventListener("click", () => {
-  alt = !alt;
-  document.documentElement.style.setProperty(
-    "--bg",
-    alt ? "#070a0f" : "#0b0f14"
-  );
-  document.documentElement.style.setProperty(
-    "--accent",
-    alt ? "#9bffef" : "#7cf5ff"
-  );
-  document.documentElement.style.setProperty(
-    "--accent-2",
-    alt ? "#7f7bff" : "#9b5cff"
-  );
-});
-
 // Particles Background
 (function particles() {
   const c = document.getElementById("particles");
