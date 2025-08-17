@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Futuristic Portfolio</title>
+    <meta
+      name="description"
+      content="A sleek, futuristic portfolio with a backend-ready project uploader."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <header>
+      <div class="container row">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <span>YOUR.NAME</span>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="row" style="gap: 0.5rem">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+            </svg>
+          </button>
+          <button class="btn primary" id="openUploader">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3v12m0-12l-4 4m4-4l4 4"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M4 15v2a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-2"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>Upload Project</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container reveal" aria-label="Hero">
+        <span class="badge">⚡ Available for freelance & collaborations</span>
+        <h1 class="title">
+          Crafting <span style="color: var(--accent)">immersive</span> web
+          experiences with a
+          <span style="color: var(--accent-2)">futuristic</span> touch.
+        </h1>
+        <p class="subtitle">
+          I’m a full‑stack and Java developer focused on performant interfaces,
+          delightful micro‑interactions, and maintainable systems.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </section>
+
+      <section id="about" class="container grid reveal" aria-label="About">
+        <div class="card">
+          <div class="content">
+            <h2>About Me</h2>
+            <p>
+              I’m Animesh, an enthusiastic and detail-oriented aspiring Java
+              Backend Developer with a strong foundation in Core Java, MySQL,
+              HTML, CSS, JavaScript, React, Git, and GitHub. I have built
+              academic and personal projects involving backend system design,
+              frontend integration, and real-time application features, focusing
+              on clean architecture, performance optimization, and
+              maintainability. I enjoy tackling complex problems, writing clean
+              and testable code, and continuously expanding my skills in both
+              backend and frontend technologies. Eager to contribute to
+              real-world, impactful projects through an internship or part-time
+              opportunity, I bring a growth mindset, adaptability, and a passion
+              for learning.
+            </p>
+            <div class="skills" aria-label="Skills">
+              <span class="chip">TypeScript</span>
+              <span class="chip">React</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">WebGL</span>
+              <span class="chip">Docker</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card"
+          style="display: grid; place-items: center; min-height: 220px"
+        >
+          <svg
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-color="var(--accent)" />
+                <stop offset="100%" stop-color="var(--accent-2)" />
+              </linearGradient>
+            </defs>
+            <circle
+              cx="100"
+              cy="100"
+              r="78"
+              fill="none"
+              stroke="url(#g1)"
+              stroke-width="2"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="58"
+              fill="none"
+              stroke="url(#g1)"
+              stroke-opacity=".6"
+              stroke-width="2"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="38"
+              fill="none"
+              stroke="url(#g1)"
+              stroke-opacity=".35"
+              stroke-width="2"
+            />
+            <g>
+              <circle cx="100" cy="22" r="6" fill="url(#g1)">
+                <animateTransform
+                  attributeName="transform"
+                  attributeType="XML"
+                  type="rotate"
+                  from="0 100 100"
+                  to="360 100 100"
+                  dur="14s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <section id="projects" class="container reveal" aria-label="Projects">
+        <div
+          class="row"
+          style="justify-content: space-between; align-items: flex-end"
+        >
+          <h2 style="margin: 0">Projects</h2>
+          <div>
+            <input
+              id="search"
+              class="input"
+              placeholder="Search projects... (title, tag)"
+              aria-label="Search projects"
+            />
+          </div>
+        </div>
+        <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
+      </section>
+
+      <section id="contact" class="container grid reveal" aria-label="Contact">
+        <div class="card">
+          <div class="content">
+            <h2>Contact</h2>
+            <p>Want to build something wild? Hit me up.</p>
+            <form
+              id="contactForm"
+              class="grid"
+              style="grid-template-columns: 1fr 1fr"
+            >
+              <div>
+                <label for="name">Name</label>
+                <input id="name" class="input" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" class="input" required />
+              </div>
+              <div style="grid-column: 1/-1">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="input"
+                  required
+                ></textarea>
+              </div>
+              <div
+                style="
+                  grid-column: 1/-1;
+                  display: flex;
+                  justify-content: flex-end;
+                "
+              >
+                <button class="btn primary" type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <h3>Elsewhere</h3>
+            <div class="skills">
+              <a
+                class="chip"
+                href="https://github.com/Optimas-CSE23L197"
+                aria-label="GitHub"
+                >GitHub</a
+              >
+              <a
+                class="chip"
+                href="https://www.linkedin.com/in/animesh-karan-664247368/"
+                aria-label="LinkedIn"
+                >LinkedIn</a
+              >
+              <a
+                class="chip"
+                href="mailto:karananimesh144@gmail.com"
+                aria-label="Email"
+                >Email</a
+              >
+              <a class="chip" href="tel:6294690079">Contact</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container row" style="justify-content: space-between">
+        <span>© <span id="year"></span> Animesh Karan All. rights reserved.</span>
+        <span style="opacity: 0.8">Built with ❤️ & a hint of neon</span>
+      </div>
+    </footer>
+
+    <!-- Upload Drawer (Backend-ready) -->
+    <aside
+      id="uploader"
+      class="drawer"
+      aria-hidden="true"
+      aria-label="Project uploader"
+    >
+      <div class="head">
+        <strong>Upload Project</strong>
+        <button class="btn" id="closeUploader" aria-label="Close uploader">
+          Close
+        </button>
+      </div>
+      <div class="body">
+        <form
+          id="uploadForm"
+          class="grid"
+          style="grid-template-columns: 1fr 1fr"
+        >
+          <div style="grid-column: 1/-1">
+            <label for="title">Title</label>
+            <input
+              id="title"
+              class="input"
+              required
+              placeholder="e.g., Hologram UI"
+            />
+          </div>
+          <div style="grid-column: 1/-1">
+            <label for="desc">Description</label>
+            <textarea
+              id="desc"
+              class="input"
+              rows="4"
+              required
+              placeholder="What did you build? What's special?"
+            ></textarea>
+          </div>
+          <div>
+            <label for="url">Live URL</label>
+            <input
+              id="url"
+              type="url"
+              class="input"
+              placeholder="https://..."
+            />
+          </div>
+          <div>
+            <label for="repo">Repo URL</label>
+            <input
+              id="repo"
+              type="url"
+              class="input"
+              placeholder="https://github.com/..."
+            />
+          </div>
+          <div style="grid-column: 1/-1">
+            <label for="tags">Tags (comma separated)</label>
+            <input id="tags" class="input" placeholder="three.js, webgl, ui" />
+          </div>
+          <div style="grid-column: 1/-1">
+            <label>Thumbnail</label>
+            <div
+              id="dropzone"
+              class="dropzone"
+              tabindex="0"
+              role="button"
+              aria-label="Upload thumbnail by clicking or dropping"
+            >
+              <div style="text-align: center">
+                <div style="font-weight: 600">
+                  Drop image here or click to select
+                </div>
+                <div class="hint">PNG/JPG up to ~5MB</div>
+              </div>
+              <input
+                id="thumb"
+                type="file"
+                accept="image/*"
+                style="display: none"
+              />
+            </div>
+            <div id="preview" class="hint" style="margin-top: 0.5rem"></div>
+          </div>
+          <div
+            style="
+              grid-column: 1/-1;
+              display: flex;
+              justify-content: flex-end;
+              gap: 0.6rem;
+            "
+          >
+            <button type="button" class="btn" id="saveDraft">
+              Save Draft (local)
+            </button>
+            <button type="submit" class="btn primary">Publish</button>
+          </div>
+        </form>
+        <p class="hint" style="margin-top: 0.8rem">
+          This form will POST to <code>/api/projects</code> with
+          <code>multipart/form-data</code>. Replace endpoint or auth as needed.
+        </p>
+      </div>
+    </aside>
+
+    <script>
+      // ==== Utilities & State ====
+      const $ = (q, el = document) => el.querySelector(q);
+      const $$ = (q, el = document) => [...el.querySelectorAll(q)];
+      const state = {
+        projects: [],
+        filtered: [],
+        token: localStorage.getItem("adminToken") || "",
+      };
+
+      // Year
+      $("#year").textContent = new Date().getFullYear();
+
+      // Theme Toggle (dark always looks best; here we just add a subtle variant)
+      const toggleBtn = $("#themeToggle");
+      let alt = false;
+      toggleBtn.addEventListener("click", () => {
+        alt = !alt;
+        document.documentElement.style.setProperty(
+          "--bg",
+          alt ? "#070a0f" : "#0b0f14"
+        );
+        document.documentElement.style.setProperty(
+          "--accent",
+          alt ? "#9bffef" : "#7cf5ff"
+        );
+        document.documentElement.style.setProperty(
+          "--accent-2",
+          alt ? "#7f7bff" : "#9b5cff"
+        );
+      });
+
+      // Particles Background
+      (function particles() {
+        const c = document.getElementById("particles");
+        const ctx = c.getContext("2d");
+        let w,
+          h,
+          dpr = Math.max(1, window.devicePixelRatio || 1);
+        const P = [];
+        const N = 80;
+        function resize() {
+          w = c.width = innerWidth * dpr;
+          h = c.height = innerHeight * dpr;
+        }
+        function spawn() {
+          P.length = 0;
+          for (let i = 0; i < N; i++)
+            P.push({
+              x: Math.random() * w,
+              y: Math.random() * h,
+              vx: (Math.random() - 0.5) * 0.25 * dpr,
+              vy: (Math.random() - 0.5) * 0.25 * dpr,
+              r: (Math.random() * 1.8 + 0.6) * dpr,
+            });
+        }
+        function step() {
+          ctx.clearRect(0, 0, w, h);
+          for (const p of P) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > w) p.vx *= -1;
+            if (p.y < 0 || p.y > h) p.vy *= -1;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(124,245,255,.55)";
+            ctx.fill();
+          }
+          // links
+          for (let i = 0; i < N; i++)
+            for (let j = i + 1; j < N; j++) {
+              const a = P[i],
+                b = P[j];
+              const dx = a.x - b.x,
+                dy = a.y - b.y;
+              const d = Math.hypot(dx, dy);
+              if (d < 120 * dpr) {
+                ctx.globalAlpha = 1 - d / (120 * dpr);
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.strokeStyle = "rgba(155,92,255,.25)";
+                ctx.lineWidth = 0.6 * dpr;
+                ctx.stroke();
+                ctx.globalAlpha = 1;
+              }
+            }
+          requestAnimationFrame(step);
+        }
+        addEventListener("resize", () => {
+          resize();
+          spawn();
+        });
+        resize();
+        spawn();
+        step();
+      })();
+
+      // Reveal on scroll
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("revealed");
+          });
+        },
+        { threshold: 0.2 }
+      );
+      $$(".reveal").forEach((el) => io.observe(el));
+
+      // Tilt effect for cards
+      function tilt(el) {
+        el.addEventListener("mousemove", (e) => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          el.style.transform = `perspective(800px) rotateY(${
+            (x - 0.5) * 8
+          }deg) rotateX(${(0.5 - y) * 8}deg)`;
+          el.style.setProperty("--mx", `${x * 100}%`);
+        });
+        el.addEventListener("mouseleave", () => {
+          el.style.transform = "none";
+        });
+      }
+      $$(".card,.project").forEach(tilt);
+
+      // ==== Projects Rendering ====
+      const grid = $("#projectsGrid");
+
+      function projectCard(p) {
+        const el = document.createElement("article");
+        el.className = "card project";
+        el.innerHTML = `
+      <div class="thumb">${
+        p.thumbnail
+          ? `<img alt="${p.title} thumbnail" src="${p.thumbnail}">`
+          : '<svg width="60" height="60" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v14H3z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M3 17l4-4 3 3 6-6 5 5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>'
+      }</div>
+      <div class="content">
+        <h3>${p.title}</h3>
+        <p style="color:var(--muted); margin:.2rem 0 .6rem">${
+          p.description || ""
+        }</p>
+        <div class="tags">${(p.tags || [])
+          .map((t) => `<span class='tag'>${t}</span>`)
+          .join("")}</div>
+        <div class="actions">
+          ${
+            p.url
+              ? `<a class="btn" href="${p.url}" target="_blank" rel="noopener">Live</a>`
+              : ""
+          }
+          ${
+            p.repo
+              ? `<a class="btn" href="${p.repo}" target="_blank" rel="noopener">Code</a>`
+              : ""
+          }
+        </div>
+      </div>`;
+        tilt(el);
+        return el;
+      }
+
+      function renderProjects(list) {
+        grid.innerHTML = "";
+        if (!list.length) {
+          grid.innerHTML = `<div class="hint">No projects found.</div>`;
+          return;
+        }
+        list.forEach((p) => grid.appendChild(projectCard(p)));
+      }
+
+      async function loadProjects() {
+        try {
+          const res = await fetch("/api/projects");
+          if (!res.ok) throw new Error("Failed");
+          const data = await res.json();
+          state.projects = Array.isArray(data) ? data : data.items || [];
+        } catch (err) {
+          // Fallback demo data
+          state.projects = [
+            {
+              title: "Neon CLI",
+              description: "A swift toolchain visualizer with terminal UI.",
+              tags: ["Node", "CLI"],
+              url: "#",
+              repo: "#",
+            },
+            {
+              title: "Holo UI",
+              description: "Glassmorphic components and shaders.",
+              tags: ["WebGL", "three.js"],
+              url: "#",
+              repo: "#",
+            },
+            {
+              title: "Pulse Charts",
+              description: "High‑FPS time‑series visualizations.",
+              tags: ["D3", "Canvas"],
+              url: "#",
+              repo: "#",
+            },
+          ];
+        }
+        state.filtered = state.projects;
+        renderProjects(state.filtered);
+      }
+
+      // Search
+      $("#search").addEventListener("input", (e) => {
+        const q = e.target.value.toLowerCase();
+        state.filtered = state.projects.filter(
+          (p) =>
+            (p.title || "").toLowerCase().includes(q) ||
+            (p.tags || []).some((t) => (t + "").toLowerCase().includes(q))
+        );
+        renderProjects(state.filtered);
+      });
+
+      // Load initial projects
+      loadProjects();
+
+      // ==== Contact (demo) ====
+      $("#contactForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const payload = {
+          name: $("#name").value,
+          email: $("#email").value,
+          message: $("#message").value,
+        };
+        console.log("Contact submit → /api/contact", payload);
+        try {
+          const r = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          alert(r.ok ? "Thanks! I will get back to you." : "Failed to send.");
+        } catch (err) {
+          alert("Failed to send.");
+        }
+      });
+
+      // ==== Uploader Drawer ====
+      const drawer = $("#uploader");
+      const openBtn = $("#openUploader");
+      const closeBtn = $("#closeUploader");
+      function openDrawer() {
+        drawer.classList.add("open");
+        drawer.setAttribute("aria-hidden", "false");
+      }
+      function closeDrawer() {
+        drawer.classList.remove("open");
+        drawer.setAttribute("aria-hidden", "true");
+      }
+      openBtn.addEventListener("click", openDrawer);
+      closeBtn.addEventListener("click", closeDrawer);
+
+      // Dropzone
+      const dz = $("#dropzone");
+      const fileInput = $("#thumb");
+      const preview = $("#preview");
+      dz.addEventListener("click", () => fileInput.click());
+      dz.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dz.style.borderColor = "var(--accent)";
+      });
+      dz.addEventListener(
+        "dragleave",
+        () => (dz.style.borderColor = "rgba(255,255,255,.25)")
+      );
+      dz.addEventListener("drop", (e) => {
+        e.preventDefault();
+        fileInput.files = e.dataTransfer.files;
+        dz.style.borderColor = "rgba(255,255,255,.25)";
+        showPreview();
+      });
+      fileInput.addEventListener("change", showPreview);
+      function showPreview() {
+        const f = fileInput.files && fileInput.files[0];
+        if (!f) {
+          preview.innerHTML = "";
+          return;
+        }
+        const url = URL.createObjectURL(f);
+        preview.innerHTML = `<img src="${url}" alt="Preview" style="max-width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.12)"/>`;
+      }
+
+      // Save Draft (local only)
+      $("#saveDraft").addEventListener("click", () => {
+        const draft = collectForm();
+        localStorage.setItem("draftProject", JSON.stringify(draft));
+        alert("Draft saved locally.");
+      });
+      (function loadDraft() {
+        const d = localStorage.getItem("draftProject");
+        if (!d) return;
+        try {
+          const j = JSON.parse(d);
+          $("#title").value = j.title || "";
+          $("#desc").value = j.description || "";
+          $("#url").value = j.url || "";
+          $("#repo").value = j.repo || "";
+          $("#tags").value = (j.tags || []).join(", ");
+        } catch {}
+      })();
+
+      function collectForm() {
+        const tags = $("#tags")
+          .value.split(",")
+          .map((s) => s.trim())
+          .filter(Boolean);
+        return {
+          title: $("#title").value,
+          description: $("#desc").value,
+          url: $("#url").value,
+          repo: $("#repo").value,
+          tags,
+        };
+      }
+
+      // Submit to backend (multipart/form-data)
+      $("#uploadForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const meta = collectForm();
+        const fd = new FormData();
+        Object.entries(meta).forEach(([k, v]) => {
+          if (Array.isArray(v)) fd.append(k, JSON.stringify(v));
+          else fd.append(k, v || "");
+        });
+        if (fileInput.files[0]) fd.append("thumbnail", fileInput.files[0]);
+
+        try {
+          const r = await fetch("/api/projects", {
+            method: "POST",
+            headers: state.token
+              ? { Authorization: "Bearer " + state.token }
+              : undefined,
+            body: fd,
+          });
+          if (!r.ok) throw new Error("Upload failed");
+          alert("Published!");
+          closeDrawer();
+          loadProjects();
+        } catch (err) {
+          console.error(err);
+          alert("Upload failed. Check console and backend.");
+        }
+      });
+
+      // Keyboard accessibility for drawer
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && drawer.classList.contains("open"))
+          closeDrawer();
+      });
+    </script>
+  </body>
+</html>
