@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Mental Health",
+    "description": "A personal website showcasing my work.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "url": "https://mentalhealthanimesh.netlify.app/"
+  },
+  {
+    "title": "Furnishop",
+    "description": "A personal website showcasing my work.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "url": "https://furnishop144.netlify.app/"
+  },
+  {
+    "title": "E-Learning Website",
+    "description": "A personal website showcasing my work",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "url": "https://elearning-logixor.netlify.app/"
+  },
+  {
+    "title": "techno eng & carbon brush co",
+    "description": "A client website for business",
+    "tags": ["React", "JavaScript", "Form Validation", "Netlify"],
+    "url": "https://technoengcarbon.in/"
+  },
+  {
+    "title": "Student Management Backend",
+    "description": "A personal backend",
+    "tags": ["Spring Boot", "Junit", "Java", "API"],
+    "repo": "https://github.com/Optimas-CSE23L197/student_management"
+  }
+]
